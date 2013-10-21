@@ -1,0 +1,14 @@
+{
+    "name": "stepcontrol",
+    "version": "1.0",
+    "desc": "步骤控制，提供激活某步骤，等待异步操作完成后进入下一步骤的功能，本组件不提供样式",
+    "cover": "",
+    "tag":"步骤控制",
+    "author": {
+        "name": "展烨",
+        "email": "zhanye.xyf@taobao.com",
+        "page": "https://github.com/idamag"
+    },
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}
