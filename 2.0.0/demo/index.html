@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>stepcontrol的demo</title>
+    <script src="http://g.tbcdn.cn/kissy/k/1.3.0/kissy-min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://g.tbcdn.cn/kissy/k/1.3.0/css/dpl/base-min.css">
+<script>var S = KISSY;S.config({packages:[{name:"kg",path:"http://g.tbcdn.cn/kg/",charset:"utf-8",ignorePackageNameInUri:true}]});if (S.Config.debug){var srcPath = "../";S.config({packages:[{name:"kg/stepcontrol/2.0.0",path:srcPath,charset:"utf-8",ignorePackageNameInUri:true}]});}</script></head>
+<style>
+li{
+  list-style:none;
+}
+
+.apply-process{
+  /* width: 600px; */
+  margin-left:50px;
+}
+.apply-process .current-step .step-bd {
+  display: block;
+}
+
+
+.apply-process .step1 .no {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) 0 0 no-repeat;
+}
+.apply-process .step2 .no {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) 0 -28px no-repeat;
+}
+.apply-process .step2 .warning,
+.apply-process .step2 .modify {
+  display: none;
+  left: 230px;
+  padding: 0;
+}
+.apply-process .step2 .warning {
+  padding-left: 15px;
+  background: url(http://gtms03.alicdn.com/tps/i3/T18c9xFbVbXXXaL.E_-11-15.png) 0 center no-repeat;
+}
+.apply-process .step3 .no {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) 0 -55px no-repeat;
+}
+.apply-process .step4 .step-hd {
+  background: none;
+}
+.apply-process .step4 .no {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) 0 -84px no-repeat;
+}
+.apply-process .step-hd {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) -166px 0 repeat-y;
+  padding-bottom: 24px;
+  position: relative;
+  color: #000;
+  font-weight: bold;
+}
+.apply-process .step-hd .no {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 28px;
+  width: 27px;
+}
+.apply-process .step-hd a,
+.apply-process .step-hd p {
+  line-height: 28px;
+  left: 0;
+  top: 0;
+  padding-left: 40px;
+  position: absolute;
+}
+.apply-process .step-bd {
+  background: url(http://gtms01.alicdn.com/tps/i1/T112qwFgddXXcP.JZk-181-209.png) -166px 0 repeat-y;
+  display: none;
+  margin-top: -24px;
+  padding-left: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.apply-process .step-bd .toggle-step {
+  padding-bottom: 25px;
+}
+.apply-process .step-bd .toggle-step a {
+  color: #fff;
+  background: #ee8b2a;
+  border: 1px solid #ee8b2a;
+  border-radius: 4px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 10px;
+  padding: 4px 16px;
+}
+.apply-process .step-bd .toggle-step .prev {
+  color: #666;
+  background: #fafafa;
+  border: 1px solid #d8d8d8;
+}
+.active4{
+  margin-left: 2.0.0px;
+}
+
+
+</style>
+<body>
+<h2>stepcontrol的demo</h2>
+
+            <div class="apply-process">
+
+                <h2 class="title-h2">申请流程</h2>
+                <div id="J_ApplySteps" class="apply-steps">
+                  <ul>
+                    <li class="step step1 current-step">
+                      <div class="step-hd">
+                        <s class="no"></s>
+                        <p>这是第一步的标题</p>
+                      </div>
+                      <div class="step-bd">
+                          <p>这是第一步骤内容,这是第一步骤内容,这是第一步骤内容,这是第一步骤内容</p>
+                          <div class="toggle-step">
+                            <a href="javascript:;" class="next J_NextStep">下一步</a>
+                          </div>
+                      </div>
+                    </li>
+                    <li class="step step2 ">
+                      <div class="step-hd">
+                          <s class="no"></s>
+                          <p>这是第二步的标题<s class="done"></s></p>
+                      </div>
+                      <div class="step-bd">
+                          <p>这是第二步骤内容,这是第二步骤内容,这是第二步骤内容,这是第二步骤内容,</p>
+                          <div class="toggle-step">
+                            <a href="javascript:;" class="next J_NextStep">下一步</a>
+                            <a href="javascript:;" class="prev J_PrevStep">上一步</a>
+                          </div>
+                      </div>
+                    </li>
+                    <li class="step step3">
+                      <div class="step-hd">
+                          <s class="no"></s>
+                          <p>这是第三步的标题<s class="done"></s></p>
+                      </div>
+                      <div class="step-bd">
+                          <p>这是第三步骤内容,这是第三步骤内容,这是第三步骤内容,这是第三步骤内容,</p>
+                          <div class="toggle-step">
+                            <a href="javascript:;" class="next J_NextStep">下一步</a>
+                            <a href="javascript:;" class="prev J_PrevStep">上一步</a>
+                          </div>
+                      </div>
+                    </li>
+                    <li class="step step4">
+                      <div class="step-hd">
+                          <s class="no"></s>
+                          <p>这是第四步的标题<s class="done"></s></p>
+                      </div>
+                      <div class="step-bd">
+                          <p>这是第四步骤内容,这是第四步骤内容,这是第四步骤内容,这是第四步骤内容,</p>
+                          <div class="toggle-step">
+                            <a href="javascript:;" class="next ">完成</a>
+                            <a href="javascript:;" class="prev J_PrevStep">上一步</a>
+                          </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <button class="active4" id="J_Active4">激活第4步</button>
+
+
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var srcPath = "../../../";
+        S.config({
+            packages:[
+                {
+                    name:"gallery-back",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/stepcontrol/2.0.0/index, sizzle', function (S, Stepcontrol) {
+
+      var E = S.Event;
+
+      var stepcontrol = new Stepcontrol({
+        container: '#J_ApplySteps',
+        stepCls: '.step',
+        nextCls: '.J_NextStep',
+        prevCls: '.J_PrevStep',
+        currentStepCls: '.current-step',
+        completeCls: '.complete'
+      });
+
+      stepcontrol.on('beforeCurrentStepChange',function(e){
+
+        S.log(e);
+        if(e.newVal > e.prevVal){
+
+          if(e.newVal == 3){
+
+            alert('现在是切换到第三步之前，需要异步加载数据，再展示第三步的内容');
+            //异步加载的数据代码
+            var cfg = {
+              url: 'http://json.f2e.taobao.net/json/china/region/trip-ticket',
+            };
+
+            stepcontrol.async(function(){
+
+              S.io({
+                dataType : 'jsonp',
+                url      : cfg.url,
+                data     : {'pvName': '浙江'},
+                jsonp    : "callback",
+                success  : function(data){
+                  if (data.success) {
+
+                    S.one('.step3').one('.step-bd p').html(data.result);
+                    S.later(function(){
+                      stepcontrol.activeStep(e.newVal);
+                    },2000);
+                  }
+                  else{
+                    alert('io error');
+                  }
+                },
+                scriptCharset: 'utf-8',
+                error    : function(){
+                },
+                timeout  : 15
+              });
+            });
+
+          }
+        }
+      });
+
+      E.on('#J_Active4','click',function(e){
+        stepcontrol.activeStep(4);
+      });
+
+    })
+</script>
+</body>
+</html>
