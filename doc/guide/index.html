@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>stepcontrol</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">stepcontrol</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span><a href="https://github.com/undefined" target="_blank" data-name="展烨" class="author"><img src="http://0.gravatar.com/avatar/07b36d25cb0f103f22977804ea1237ad?s=60" alt="展烨"></a><span class="author-name">展烨</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/stepcontrol" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="stepcontrol" class="J_View">304</span></p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>stepcontrol是一个控制步骤的组件，本身不提供样式。</p>
+<ul>
+<li>版本：2.0.0</li>
+<li>作者：展烨</li>
+<li>标签：</li>
+<li>demo：<a href="http://kg.kissyui.com/stepcontrol/2.0.0/demo/index.html">http://kg.kissyui.com/stepcontrol/2.0.0/demo/index.html</a></li>
+</ul>
+<h2 id="-">初始化组件</h2>
+<pre><code>S.use(&#39;kg/stepcontrol/2.0.0/index&#39;, function (S, Stepcontrol) {
+     var stepcontrol = new Stepcontrol(config);
+})
+</code></pre><h2 id="api-">API说明</h2>
+<h3 id="config-">config 参数说明</h3>
+<ul>
+<li>container: 容器节点（必须）</li>
+<li>stepCls: 每个步骤的容器class , 默认 .step</li>
+<li>nextCls: 下一步 按钮的class, 默认.J_NextStep</li>
+<li>prevCls: 上一步 按钮的class, 默认.J_PrevStep</li>
+<li>currentStepCls: 当前步骤的class, 默认.current-step</li>
+<li>completeCls: 已经完成步骤（即当前步骤之前的所有步骤）的class, 默认.complete</li>
+</ul>
+<h3 id="attrs">ATTRS</h3>
+<ul>
+<li>currentStep: 当前步骤的序号</li>
+</ul>
+<h3 id="-">方法</h3>
+<ul>
+<li>activeStep(stepNum): 激活第stepNum个步骤，即给其所在的步骤节点的class加入currentStepCls , 之前的步骤节点加入completeCls</li>
+<li>async(fn): 在某个步骤中异步操作，fn为用户传人的函数，见demo。</li>
+</ul>
+<h3 id="-">事件</h3>
+<p>-beforeCurrentStepChange
+-afterCurrentStepChange</p>
+<pre><code>  stepcontrol.on(&#39;beforeCurrentStepChange&#39;,function(e){
+    //e.newVal
+    //e.prevVal
+  });
+</code></pre>
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
